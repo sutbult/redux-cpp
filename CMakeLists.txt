@@ -29,3 +29,6 @@ add_executable(redux_cpp_tests
 add_executable(redux_counter_example
 	${PROJECT_SOURCE_DIR}/examples/counter.cpp
 )
+add_executable(redux_counter_range_example
+	${PROJECT_SOURCE_DIR}/examples/counter_range.cpp
+)

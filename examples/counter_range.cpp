@@ -23,18 +23,32 @@ SOFTWARE.
 #include "redux.hpp"
 #include <iostream>
 
-enum Action {
+enum ActionType {
 	INCREMENT,
 	DECREMENT
 };
+class Action {
+	public:
+		ActionType type;
+		int range;
+
+		Action(ActionType type, int range) : type(type), range(range) {}
+};
+
+Action increment(int range) {
+	return Action(INCREMENT, range);
+}
+Action decrement(int range) {
+	return Action(DECREMENT, range);
+}
 
 int reducer(int state, Action action) {
-	switch(action) {
+	switch(action.type) {
 		case INCREMENT:
-			return state + 1;
+			return state + action.range;
 
 		case DECREMENT:
-			return state - 1;
+			return state - action.range;
 
 		default:
 			return state;
@@ -50,10 +64,12 @@ int main() {
 
 	store.subscribe(log);
 
-	store.dispatch(INCREMENT);
+	store.dispatch(increment(1));
 	// 1
-	store.dispatch(INCREMENT);
-	// 2
-	store.dispatch(DECREMENT);
-	// 1
+	store.dispatch(increment(2));
+	// 3
+	store.dispatch(decrement(4));
+	// -1
+	store.dispatch(increment(7));
+	// 6
 }
