@@ -26,3 +26,6 @@ add_executable(redux_cpp_tests
 	${PROJECT_SOURCE_DIR}/tests/main.cpp
 	${PROJECT_SOURCE_DIR}/tests/tests.cpp
 )
+add_executable(redux_counter_example
+	${PROJECT_SOURCE_DIR}/examples/counter.cpp
+)
