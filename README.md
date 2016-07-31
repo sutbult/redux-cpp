@@ -6,7 +6,7 @@ A C++ implementation of the [Redux](http://redux.js.org/) library
 
 An implementation of the [Redux Gist](https://github.com/reactjs/redux/blob/master/README.md#the-gist) in Redux-cpp:
 
-```
+```cpp
 #include "redux.hpp"
 #include <iostream>
 
