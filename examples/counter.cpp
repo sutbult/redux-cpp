@@ -41,8 +41,8 @@ int reducer(int state, Action action) {
 	}
 }
 
-void log(int n) {
-	std::cout << n << std::endl;
+void log(int state) {
+	std::cout << state << std::endl;
 }
 
 int main() {
