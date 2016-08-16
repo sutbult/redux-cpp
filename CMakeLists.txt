@@ -33,3 +33,6 @@ add_executable(redux_counter_example
 add_executable(redux_counter_range_example
 	${PROJECT_SOURCE_DIR}/examples/counter_range.cpp
 )
+
+enable_testing()
+add_test(redux_cpp redux_cpp_tests)
