@@ -23,6 +23,11 @@ SOFTWARE.
 #ifndef REDUX_H
 #define REDUX_H
 
+#define __HAS_CPP11_SUPPORT (__cplusplus >= 201103L)
+
+#if __HAS_CPP11_SUPPORT
+#include <functional>
+#endif
 #include <vector>
 
 namespace redux {
@@ -30,8 +35,13 @@ namespace redux {
 template <typename STATE_T, typename ACTION_T>
 class Store {
 	public:
+		#if __HAS_CPP11_SUPPORT
+		typedef std::function<STATE_T(STATE_T, ACTION_T)> Reducer;
+		typedef std::function<void(STATE_T)> Subscriber;
+		#else
 		typedef STATE_T (*Reducer) (STATE_T, ACTION_T);
 		typedef void (*Subscriber) (STATE_T);
+		#endif
 
 		Store(Reducer, STATE_T);
 		void subscribe(Subscriber);

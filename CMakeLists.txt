@@ -22,6 +22,7 @@ cmake_minimum_required(VERSION 2.8)
 project(redux_cpp)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+add_definitions(-std=c++11)
 add_executable(redux_cpp_tests
 	${PROJECT_SOURCE_DIR}/tests/main.cpp
 	${PROJECT_SOURCE_DIR}/tests/tests.cpp
