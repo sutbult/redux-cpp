@@ -84,4 +84,14 @@ TEST_CASE("A simple counter", "[redux]") {
 			REQUIRE(counterTemp[1] == 2);
 		}
 	}
+	#if __HAS_CPP11_SUPPORT
+	SECTION("The store can be subscribed to with an anonymous subscriber") {
+		int actual;
+		store.subscribe([&] (int state) {
+			actual = state;
+		});
+		store.dispatch(INCREMENT);
+		REQUIRE(actual == 1);
+	}
+	#endif
 }
