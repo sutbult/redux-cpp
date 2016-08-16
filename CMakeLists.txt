@@ -22,7 +22,6 @@ cmake_minimum_required(VERSION 2.8)
 project(redux_cpp)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-add_definitions(-std=c++11)
 add_executable(redux_cpp_tests
 	${PROJECT_SOURCE_DIR}/tests/main.cpp
 	${PROJECT_SOURCE_DIR}/tests/tests.cpp
@@ -33,6 +32,7 @@ add_executable(redux_counter_example
 add_executable(redux_counter_range_example
 	${PROJECT_SOURCE_DIR}/examples/counter_range.cpp
 )
+set_property(TARGET redux_cpp_tests PROPERTY CXX_STANDARD 11)
 
 enable_testing()
 add_test(redux_cpp redux_cpp_tests)
