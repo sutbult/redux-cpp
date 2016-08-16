@@ -2,6 +2,8 @@
 
 A C++ implementation of the [Redux](http://redux.js.org/) library
 
+[![Build Status](https://travis-ci.org/sutbult/redux-cpp.svg?branch=master)](https://travis-ci.org/sutbult/redux-cpp)
+
 ## Installation
 
 All Redux-cpp source code is contained within a single header. The easiet way to install Redux-cpp is simply to drop it inside your project.
