@@ -6,7 +6,7 @@ A C++ implementation of the [Redux](http://redux.js.org/) library
 
 ## Installation
 
-All Redux-cpp source code is contained within a single header. The easiet way to install Redux-cpp is simply to drop it inside your project.
+All Redux-cpp source code is contained within a single header. The easiest way to install Redux-cpp is simply to drop it inside your project.
 Examples and unit tests can easiest be compiled with [CMake](https://cmake.org/).
 The respository has no dependencies except the standard library.
 
